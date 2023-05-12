@@ -10,4 +10,4 @@ public class EscolaJavaApplication {
 		SpringApplication.run(EscolaJavaApplication.class, args);
 	}
 
-}
+} 

@@ -1,6 +1,6 @@
 package br.com.escolajava.models;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import org.bson.types.ObjectId;
@@ -33,14 +33,15 @@ public class Aluno {
   public void setNome(String nome) {
     this.nome = nome;
   }
-
+  
   public Date getDataNascimento() {
     return dataNascimento;
   }
-
-  public void setDataNascimento(Date dataNascimento) {
-    this.dataNascimento = dataNascimento;
+  
+  public void setDataNascimento(Date date) {
+    this.dataNascimento = date;
   }
+  
 
   public Curso getCurso() {
     return curso;
@@ -70,6 +71,7 @@ public class Aluno {
     setId(new ObjectId());
     return this;
   }
+
 
 
   

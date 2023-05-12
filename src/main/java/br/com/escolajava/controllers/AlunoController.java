@@ -1,5 +1,7 @@
 package br.com.escolajava.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,5 +30,12 @@ public class AlunoController {
   public String salvar(@ModelAttribute Aluno aluno){
     repository.salvar(aluno);
     return "redirect:/aluno/cadastrar";
+  }
+
+  @GetMapping("/aluno/listar")
+  public String listar(Model model){
+    List<Aluno> alunos = repository.obterTodosAlunos();
+    model.addAttribute("alunos", alunos);
+    return "aluno/listar";
   }
 }
